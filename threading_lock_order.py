@@ -7,6 +7,7 @@ usr_num = int(input("Enter a positive int: "))
 lock1 = Lock()
 lock2 = Lock()
 
+
 def foo(num, start_lock, end_lock):
     for i in range(num):
         start_lock.acquire()
@@ -20,10 +21,11 @@ def bar(num, start_lock, end_lock):
         print("bar", end="")
         end_lock.release()
 
+
 lock2.acquire()
 
-foo_thread = Thread(target = foo, args=(usr_num, lock1, lock2))
-bar_thread = Thread(target = bar, args=(usr_num, lock2, lock1))
+foo_thread = Thread(target=foo, args=(usr_num, lock1, lock2))
+bar_thread = Thread(target=bar, args=(usr_num, lock2, lock1))
 
 foo_thread.start()
 bar_thread.start()

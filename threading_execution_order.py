@@ -19,7 +19,7 @@ def append_integer(lst, integer):
 lst = []
 
 # Write your code here.
-thread1 = Thread(target=append_values, args=(lst, [1,3,5]))
+thread1 = Thread(target=append_values, args=(lst, [1, 3, 5]))
 thread2 = Thread(target=append_integer, args=(lst, 4))
 thread3 = Thread(target=append_integer, args=(lst, 3))
 
@@ -27,4 +27,3 @@ thread1.start()
 thread2.start()
 thread1.join()
 thread3.start()
-

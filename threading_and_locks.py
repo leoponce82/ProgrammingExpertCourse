@@ -9,11 +9,10 @@ def loop(thread_name, n, lock):
     lock.acquire()
     for i in range(n):
         # Sleep for up to 20 milliseconds.
-        
+
         time.sleep(random.randint(1, 20) / 1000)
         print(f"Thread {thread_name}: {i}")
     lock.release()
-    
 
 
 # TODO: As an exercise, try to change this code to let
